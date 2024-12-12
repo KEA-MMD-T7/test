@@ -1,0 +1,9 @@
+---
+const { user } = Astro.props;
+---
+
+<article>
+  <img src={user.image} alt="profilbillede" />
+  <h2>{user.firstName}</h2>
+  <p>{user.email}</p>
+</article>

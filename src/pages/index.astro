@@ -1,6 +1,7 @@
 ---
-import { date } from "astro:schema";
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+
 const url = "https://dummyjson.com/users";
 const resp = await fetch(url);
 const data = await resp.json();
@@ -8,9 +9,9 @@ const data = await resp.json();
 ---
 
 <Layout>
-  <h1>Test</h1>
+  <h1>Users</h1>
   <section class="grid">
-    {data.users.map((elm) => <p>{elm.firstName + " " + elm.lastName}</p>)}
+    {data.users.map((user) => <Card {user} />)}
   </section>
 </Layout>
 

@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Ucard from "../components/Ucard.astro";
+const url = "https://dummyjson.com/users";
+
+const data = await fetch(url).then((res) => res.json());
+console.log(data);
+---
+
+<Layout>
+  <h1>Test</h1>
+  {data.users.map((user) => <Ucard {user} />)}
+</Layout>

@@ -1,6 +1,9 @@
 ---
-const { product } = Astro.props;
+const { user } = Astro.props;
 ---
 
-<h2>{product.productname}</h2>
-<p>{product.price}</p>
+<article>
+  <img src={"images/" + user.billede} alt="profilbillede" />
+  <h2>{user.navn}</h2>
+  <p>{user.email}</p>
+</article>

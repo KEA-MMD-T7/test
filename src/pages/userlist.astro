@@ -8,6 +8,16 @@ console.log(data);
 ---
 
 <Layout>
-  <h1>Test</h1>
-  {data.users.map((user) => <Ucard {user} />)}
+  <h1>Users</h1>
+  <section>
+    {data.users.map((user) => <Ucard {user} />)}
+  </section>
 </Layout>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+</style>

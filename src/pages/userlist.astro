@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Pcard from "../components/Pcard.astro";
 //const url = "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/produkter";
-const url = "https://pbhqptcgtunejfwsunzi.supabase.co/rest/v1/medlemmer";
+const url = "https://pbhqptcgtunejfwsunzi.supabase.co/rest/v1/medlemmer?order=navn";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiaHFwdGNndHVuZWpmd3N1bnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg1MjU3NjEsImV4cCI6MTk5NDEwMTc2MX0.qPLnnbV_2nDBjczEpGDt10lr3DQgCZ54roKiy0OZXL4";
 
 const options = {
@@ -16,6 +16,16 @@ console.log(data);
 ---
 
 <Layout>
-  <h1>Test</h1>
-  {data.map((user) => <Pcard {user} />)}
+  <h1>Medlemmer</h1>
+  <section>
+    {data.map((user) => <Pcard {user} />)}
+  </section>
 </Layout>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+</style>

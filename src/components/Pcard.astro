@@ -7,3 +7,11 @@ const { user } = Astro.props;
   <h2>{user.navn}</h2>
   <p>{user.email}</p>
 </article>
+
+<style>
+  img {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+</style>

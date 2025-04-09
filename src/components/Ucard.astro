@@ -2,5 +2,15 @@
 const { user } = Astro.props;
 ---
 
-<h2>{user.firstName}</h2>
-<p>{user.email}</p>
+<article>
+  <img src={user.image} alt="profile image" />
+  <h2>{user.firstName} {user.lastName}</h2>
+  <p>{user.email}</p>
+</article>
+
+<style>
+  article {
+    padding: 0.5rem;
+    border: 1px dotted green;
+  }
+</style>

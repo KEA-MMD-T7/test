@@ -19,5 +19,16 @@ const data = await fetch(curl, options).then((response) => response.json());
 ---
 
 <Layout>
-  {data.map((product) => <PCard {product} />)}
+  <h1>Varer i butikken</h1>
+  <section>
+    {data.map((product) => <PCard {product} />)}
+  </section>
 </Layout>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+</style>

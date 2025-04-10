@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
   const curl =
     "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/products?select=*";
@@ -15,17 +16,23 @@ export async function getStaticPaths() {
   const response = await fetch(curl, options);
   const data = await response.json();
 
-  return data.map((post) => {
+  return data.map((product) => {
     return {
-      params: { id: post.id },
-      props: { post },
+      params: { id: product.id },
+      props: { product },
     };
   });
 }
 
 const { id } = Astro.params;
-const { post } = Astro.props;
+const { product } = Astro.props;
 ---
 
-<h1>{id}: {post.name}</h1>
-<img src={"../images/" + post.image} alt={post.imagedescr} />
+<Layout>
+  <h1>{id}: {product.name}</h1>
+  <img src={"../images/" + product.image} alt={product.imagedescr} />
+  <p>Findes i størrelserne</p>
+  <ul>
+    {product.size.map((str) => <li>{str}</li>)}
+  </ul>
+</Layout>

@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import PCard from "../components/P-card.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const curl =
+  "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/products?select=*";
+
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZseHJneHJ2eGV4aW1zc2t3dWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTEwNTAsImV4cCI6MjA1OTQyNzA1MH0.xAOE81P0J3Rbdu_mZXneRAPUTNpiVhn7VSpHU8S3AnU";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+
+const data = await fetch(curl, options).then((response) => response.json());
+//console.log(data);
 ---
 
 <Layout>
-	<Welcome />
+  {data.map((product) => <PCard {product} />)}
 </Layout>

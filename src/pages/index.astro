@@ -19,5 +19,30 @@ const data = await fetch(curl, options).then((response) => response.json());
 ---
 
 <Layout>
-  {data.map((product) => <PCard {product} />)}
+  <h1>Min Butik</h1>
+  <h2>Shirts</h2>
+  <section>
+    {data.map((product) => product.category == "shirt" && <PCard {product} />)}
+  </section>
+  <h2>Bukser</h2>
+  <section>
+    {data.map((product) => product.category == "buks" && <PCard {product} />)}
+  </section>
+  <h2>Caps</h2>
+  <section>
+    {data.map((product) => product.category == "head" && <PCard {product} />)}
+  </section>
 </Layout>
+
+<style>
+  body {
+    max-width: 1000px;
+    margin: auto;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    border-bottom: dotted;
+  }
+</style>

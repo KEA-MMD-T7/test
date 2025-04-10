@@ -26,11 +26,11 @@ const data = await fetch(curl, options).then((response) => response.json());
   </section>
   <h2>Bukser</h2>
   <section>
-    {data.map((product) => product.category == "buks" && <PCard {product} />)}
+    {data.map((product) => product.category == "pants" && <PCard {product} />)}
   </section>
   <h2>Caps</h2>
   <section>
-    {data.map((product) => product.category == "head" && <PCard {product} />)}
+    {data.map((product) => product.category == "cap" && <PCard {product} />)}
   </section>
 </Layout>
 

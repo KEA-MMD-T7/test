@@ -8,6 +8,18 @@
     <title>Butik</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Home</a><a href="caps">Caps</a><a href="about">Om os</a>
+    </nav>
     <slot />
   </body>
 </html>
+<style>
+  nav {
+    text-align: end;
+    padding: 1rem;
+    a {
+      padding: 1rem;
+    }
+  }
+</style>

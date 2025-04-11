@@ -1,34 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PCard from "../components/P-card.astro";
-
-const curl =
-  "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/products?select=*";
-
-const apikey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZseHJneHJ2eGV4aW1zc2t3dWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTEwNTAsImV4cCI6MjA1OTQyNzA1MH0.xAOE81P0J3Rbdu_mZXneRAPUTNpiVhn7VSpHU8S3AnU";
-
-const options = {
-  headers: {
-    apikey: apikey,
-  },
-};
-
-const data = await fetch(curl, options).then((response) => response.json());
-//console.log(data);
 ---
 
 <Layout>
-  <h1>Varer i butikken</h1>
-  <section>
-    {data.map((product) => <PCard {product} />)}
-  </section>
+  <h1>Velkommen til min butik</h1>
 </Layout>
-
-<style>
-  section {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-</style>

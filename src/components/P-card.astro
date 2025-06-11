@@ -4,7 +4,7 @@ const { product } = Astro.props;
 
 <a href={"single/" + product.id} class={product.layout}>
   <article>
-    <img src={product.image} alt={product.imagedescr} />
+    <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/products/images/${product.image}` alt={product.imagedescr} />
     <h2>{product.name}</h2>
     <p>kr. {product.price},-</p>
   </article>

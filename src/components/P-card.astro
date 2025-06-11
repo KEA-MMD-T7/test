@@ -2,7 +2,7 @@
 const { product } = Astro.props;
 ---
 
-<a href={"single/" + product.id}>
+<a href={"single/" + product.id} class={product.layout}>
   <article>
     <img src={product.image} alt={product.imagedescr} />
     <h2>{product.name}</h2>
@@ -18,5 +18,17 @@ const { product } = Astro.props;
   a {
     text-decoration: none;
     color: inherit;
+  }
+  .layout1 {
+    text-align: left;
+    color: red;
+  }
+  .layout2 {
+    text-align: right;
+    color: green;
+  }
+  .layout3 {
+    text-align: center;
+    color: blue;
   }
 </style>

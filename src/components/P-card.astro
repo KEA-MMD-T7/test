@@ -2,9 +2,12 @@
 const { product } = Astro.props;
 ---
 
-<a href={"single/" + product.id} class={product.layout}>
+<a href={"single/" + product.id} class={product.category}>
   <article>
-    <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/products/images/${product.image}` alt={product.imagedescr} />
+    <img
+      src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/products/images/${product.image}`
+      alt={product.imagedescr}
+    />
     <h2>{product.name}</h2>
     <p>kr. {product.price},-</p>
   </article>
@@ -19,15 +22,15 @@ const { product } = Astro.props;
     text-decoration: none;
     color: inherit;
   }
-  .layout1 {
+  .cap {
     text-align: left;
     color: red;
   }
-  .layout2 {
+  .shirt {
     text-align: right;
     color: green;
   }
-  .layout3 {
+  .pants {
     text-align: center;
     color: blue;
   }

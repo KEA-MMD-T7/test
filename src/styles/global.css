@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Super;
+    src: url(fonts/Super_Trend.ttf);
+}
+
+h1 {
+    font-family: Super;
+}
